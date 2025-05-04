@@ -34,10 +34,13 @@ int main() {
    int hori;
    int vert;
 
+   int Cavalo;
+
 
 //Inicia Var
-   hori = 0;
-   vert = 0;
+   hori    = 0;
+   vert    = 0;
+   Cavalo  = 0;
 
    for (int i = 1; i <= 5; i++){
     printf("Torre Direita \n");
@@ -56,6 +59,16 @@ int main() {
     printf("Rainha Esquerda \n");
    }
 
+   printf("\n");
 
+   while (Cavalo == 0){
+    for (int i = 1; i <= 2; i++){
+        printf("Cavalo Cima \n");
+    }
+    printf("Cavalo Direita \n");
+    Cavalo++;
+   }
+   
+  
     return 0;
 }
