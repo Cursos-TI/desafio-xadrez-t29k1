@@ -27,47 +27,54 @@
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-
-int main() {
-   
 // Var
-   int hori;
-   int vert;
-
-   int Cavalo;
+int Cavalo;
 
 
 //Inicia Var
-   hori    = 0;
-   vert    = 0;
    Cavalo  = 0;
 
-   for (int i = 1; i <= 5; i++){
-    printf("Torre Direita \n");
-   }
+void MoverTorre(int Casas){
+    if (Casas > 0){
+     printf("Torre Direita\n");
+     MoverTorre(Casas - 1);   
+    }
+}
 
-   printf("\n");
+void MoverBispo(int Casas){
+    if (Casas > 0){
+        printf("Bispo Direita  \n");
+        printf("Bispo Cima   \n");
+        MoverBispo(Casas - 1);   
+    }
+}
 
-   for (int i = 1; i <= 5; i++){
-    printf("Bispo Direita  \n");
-    printf("Bispo Cima   \n");   
-   }
+void MoverRainha(int Casas){
+    if (Casas > 0){
+        printf("Rainha Esquerda \n");
+        MoverRainha(Casas - 1);   
+    }
+}
 
-   printf("\n");
-
-   for (int i = 1; i <= 8; i++){
-    printf("Rainha Esquerda \n");
-   }
-
-   printf("\n");
-
-   while (Cavalo == 0){
+void MoverCavalo(int Casas){
+  while (Cavalo == 0){
     for (int i = 1; i <= 2; i++){
         printf("Cavalo Cima \n");
     }
     printf("Cavalo Direita \n");
-    Cavalo++;
-   }
+    Cavalo++; 
+  }  
+}
+
+int main() {
+//Cod  
+   MoverTorre(5);
+   
+   MoverBispo(5);
+
+   MoverRainha(8);
+
+   MoverCavalo(1);
    
   
     return 0;
